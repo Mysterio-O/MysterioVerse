@@ -4,7 +4,13 @@ import RootLayout from "../Layouts/RootLayout"
 
 export const router = createBrowserRouter([
     {
-        path:'/',
-        Component:RootLayout
+        path: '/',
+        Component: RootLayout,
+        children: [
+            {
+                index: true,
+                Component: Home
+            }
+        ]
     }
 ])
