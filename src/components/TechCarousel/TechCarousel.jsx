@@ -27,16 +27,22 @@ const technologies = [
 ];
 
 
-const getRandomWave = () => {
-    const amplitude = 5 + Math.random() * 10; // Random amplitude between 6 and 15 pixels
-    const duration = 5 + Math.random() * 3; // Random duration between 5 and 8 seconds
-    return { amplitude, duration };
-};
+
 
 
 const TechCarousel = () => {
 
     const [animationDuration, setAnimationDuration] = useState(window.innerWidth < 768 ? 15 : 30);
+
+    const [randomNumber, setRandomNumber] = useState(window.innerWidth < 576 ? 1 : 5);
+
+
+    const getRandomWave = () => {
+        const amplitude = 5 + Math.random() * randomNumber; // Random amplitude 
+        const duration = 5 + Math.random() * randomNumber; // Random duration 
+        return { amplitude, duration };
+    };
+
 
     useEffect(() => {
         const handleResize = () => {
@@ -47,6 +53,15 @@ const TechCarousel = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    useEffect(() => {
+        const handleNumber = () => {
+            setRandomNumber(window.innerWidth < 576 ? 1 : 5)
+        }
+        window.addEventListener("resize", handleNumber);
+        handleNumber();
+        return () => window.removeEventListener("resize", handleNumber);
+    }, [])
+
     console.log(animationDuration)
 
 
@@ -54,9 +69,9 @@ const TechCarousel = () => {
     const extendedTechnologies = [...technologies, ...technologies, ...technologies, ...technologies, ...technologies,];
 
     return (
-        <section className="py-10">
+        <section className="h-32 md:mt-10 lg:mt-0">
             <div className="container mx-auto">
-                <div className="overflow-hidden">
+                <div className="overflow-hidden py-4">
                     <motion.div
                         className="flex"
                         initial={{ x: 0 }}

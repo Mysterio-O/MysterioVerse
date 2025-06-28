@@ -41,7 +41,7 @@ const Banner = () => {
 
 
     return (
-        <div className='pt-24 min-h-[calc(100vh-220px)] w-full mx-auto overflow-x-hidden mb-10 md:mb-0'>
+        <div className='pt-24 min-h-[calc(100vh-220px)] w-full mx-auto overflow-x-hidden mb-5 md:mb-0'>
 
             <div className='flex flex-col lg:flex-row justify-between gap-16 w-full'>
 
