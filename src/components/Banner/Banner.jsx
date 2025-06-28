@@ -59,9 +59,9 @@ const Banner = () => {
                                 transition: { type: "spring", stiffness: 300, mass: 2, damping: 30 }
                             }}
                             src="https://i.ibb.co/k60LkFJj/How-to-Be-More-Anonymous-Online-Security-Getty-Images-142009818.webp" alt=""
-                            className={`w-24 h-24 rounded-full z-0 lg:z-10 transition-all duration-300 md:duration-75 cursor-pointer ${isCursorIn ? '-translate-y-20 translate-x-15 md:translate-y-0 md:translate-x-0' : 'translate-y-0 translate-x-0'}`} />
+                            className={`w-24 h-24 rounded-full z-0 transition-all duration-300 md:duration-75 cursor-pointer ${isCursorIn ? '-translate-y-20 translate-x-15 md:translate-y-0 md:translate-x-0' : 'translate-y-0 translate-x-0'}`} />
 
-                        <span className={`absolute left-32 top-34 transition-all duration-300 ${isCursorIn ? 'text-green-500 scale-50 opacity-0 md:opacity-100 md:scale-100 -translate-x-4 translate-y-2 z-0' : 'scale-150 -translate-x-8 z-0 lg:z-20'}`}>
+                        <span className={`absolute left-32 top-34 transition-all duration-300 ${isCursorIn ? 'text-green-500 scale-50 opacity-0 md:opacity-100 md:scale-100 -translate-x-4 translate-y-2 z-0' : 'scale-150 -translate-x-8 z-0'}`}>
                             <RxCursorArrow size={36} />
                         </span>
                         <h2 className={`uppercase text-3xl md:text-[5rem] text-[#FFFFFF] font-bold whitespace-nowrap transition-all duration-300 leading-[10rem] ${moveRight ? 'md:translate-x-6 translate-y-6 md:translate-y-0 -translate-x-13' : 'translate-x-0 translate-y-0'}`}>Hi, i am</h2>
