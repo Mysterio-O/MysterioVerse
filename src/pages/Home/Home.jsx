@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from '../../components/Banner/Banner';
 import TechCarousel from '../../components/TechCarousel/TechCarousel';
 import AboutMe from '../../components/AboutMe/AboutMe';
+import ContactMe from '../../components/ContactMe/ContactMe';
 
 const Home = () => {
     return (
@@ -14,6 +15,9 @@ const Home = () => {
             </div>
             <div>
                 <AboutMe/>
+            </div>
+            <div>
+                <ContactMe/>
             </div>
         </div>
     );
