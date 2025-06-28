@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { FaEnvelope } from 'react-icons/fa';
-import { AnimatePresence, motion, useMotionTemplate, useScroll, useTransform } from 'motion/react';
+import { AnimatePresence, motion, useMotionTemplate, useMotionValueEvent, useScroll, useTransform } from 'motion/react';
+import EmailButton from './EmailButton';
+import profile from '../../assets/profile.jpg'
 
 const AboutMe = () => {
 
@@ -11,9 +13,9 @@ const AboutMe = () => {
         offset: ['start end', 'end start']
     })
 
-    // useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    //     console.log("changed value", latest)
-    // })
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+        console.log("changed value", latest)
+    })
 
     const contentOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
     const blur = useTransform(scrollYProgress, [0, 0.5], [1,0]);
@@ -53,20 +55,24 @@ const AboutMe = () => {
                         </div>
 
                         {/* Contact Info */}
-                        <div className="bg-gradient-to-r from-gray-900 to-black p-6 rounded-2xl flex items-center space-x-4 shadow-lg">
+                        <motion.a 
+                        initial={{scale:0.8,opacity:0,y:20}}
+                        whileInView={{scale:1,y:0,opacity:1}}
+                        whileHover={{scale:1.1}}
+                        whileTap={{scale:0.9}}
+                        transition={{duration:0.3,ease:'easeInOut'}}
+                        href="mailto:skrabbi.019@gmail.com"
+                        className="bg-gradient-to-r from-gray-900 to-black p-6 rounded-2xl flex items-center space-x-4 shadow-lg">
                             <img
-                                src="https://i.pravatar.cc/100"
+                                src={profile}
                                 alt="Profile"
                                 className="w-14 h-14 rounded-full object-cover"
                             />
                             <div>
                                 <p className="text-sm text-gray-400">GET IN TOUCH</p>
-                                <p className="text-lg font-semibold flex items-center gap-2">
-                                    <FaEnvelope className="text-blue-400" />
-                                    hello@example.com
-                                </p>
+                                <EmailButton/>
                             </div>
-                        </div>
+                        </motion.a>
                     </div>
 
                     {/* Tech Stack Subsections */}
