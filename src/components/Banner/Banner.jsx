@@ -6,6 +6,8 @@ import BlurText from './banner_animations_contents/BlurText/BlurText';
 import { GiSpiderWeb } from 'react-icons/gi';
 import RotatingText from './banner_animations_contents/RotatingText/RotatingText';
 import PortfolioBtn from './banner_animations_contents/Portfolio_Btn/PortfolioBtn';
+import resume from '../../assets/pdfs/resume.pdf'
+import TechCarousel from '../TechCarousel/TechCarousel';
 
 const Banner = () => {
 
@@ -39,7 +41,7 @@ const Banner = () => {
 
 
     return (
-        <div className='py-24 min-h-[calc(100vh-120px)] w-full mx-auto overflow-x-hidden'>
+        <div className='pt-24 min-h-[calc(100vh-220px)] w-full mx-auto overflow-x-hidden mb-10 md:mb-0'>
 
             <div className='flex flex-col lg:flex-row justify-between gap-16 w-full'>
 
@@ -57,9 +59,9 @@ const Banner = () => {
                                 transition: { type: "spring", stiffness: 300, mass: 2, damping: 30 }
                             }}
                             src="https://i.ibb.co/k60LkFJj/How-to-Be-More-Anonymous-Online-Security-Getty-Images-142009818.webp" alt=""
-                            className={`w-24 h-24 rounded-full z-10 transition-all duration-300 md:duration-75 cursor-pointer ${isCursorIn ? '-translate-y-20 translate-x-15 md:translate-y-0 md:translate-x-0' : 'translate-y-0 translate-x-0'}`} />
+                            className={`w-24 h-24 rounded-full z-0 lg:z-10 transition-all duration-300 md:duration-75 cursor-pointer ${isCursorIn ? '-translate-y-20 translate-x-15 md:translate-y-0 md:translate-x-0' : 'translate-y-0 translate-x-0'}`} />
 
-                        <span className={`absolute left-32 top-34 transition-all duration-300 ${isCursorIn ? 'text-green-500 scale-50 opacity-0 md:opacity-100 md:scale-100 -translate-x-4 translate-y-2 z-0' : 'scale-150 -translate-x-8 z-20'}`}>
+                        <span className={`absolute left-32 top-34 transition-all duration-300 ${isCursorIn ? 'text-green-500 scale-50 opacity-0 md:opacity-100 md:scale-100 -translate-x-4 translate-y-2 z-0' : 'scale-150 -translate-x-8 z-0 lg:z-20'}`}>
                             <RxCursorArrow size={36} />
                         </span>
                         <h2 className={`uppercase text-3xl md:text-[5rem] text-[#FFFFFF] font-bold whitespace-nowrap transition-all duration-300 leading-[10rem] ${moveRight ? 'md:translate-x-6 translate-y-6 md:translate-y-0 -translate-x-13' : 'translate-x-0 translate-y-0'}`}>Hi, i am</h2>
@@ -90,7 +92,7 @@ const Banner = () => {
                                         animateBy="words"
                                         direction="top"
                                         // onAnimationComplete={handleAnimationComplete}
-                                        className={`text-base md:text-2xl mb-8 md:whitespace-nowrap inline font-exo ${isCursorIn ? "translate-x-5" : ""}`}
+                                        className={`text-white/70 md:text-2xl mb-8 md:whitespace-nowrap inline font-exo ${isCursorIn ? "translate-x-5" : ""}`}
                                     />
                                     {
                                         spiderWeb && <motion.span
@@ -106,7 +108,7 @@ const Banner = () => {
                                             }}
                                             transition={{ duration: 0.3 }}
                                         >
-                                            <GiSpiderWeb size={40} />
+                                            <GiSpiderWeb size={40} className='text-white/60'/>
                                         </motion.span>
                                     }
                                 </motion.div>
@@ -147,8 +149,8 @@ const Banner = () => {
                     <div className='flex flex-col gap-4 items-center'>
                         <PortfolioBtn />
                         <a
-                            href="/src/assets/pdfs/resume.pdf"
-                            download="resume.pdf">
+                            href={resume}
+                            download="resume">
 
                             <button className="cursor-pointer flex justify-between bg-gray-800 px-3 py-2 rounded-full text-white tracking-wider shadow-xl hover:bg-gray-900 hover:scale-105 duration-500 hover:ring-1 font-mono w-[150px]">
                                 Download Resume
