@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import profile from '../../assets/profile.jpg'
@@ -6,6 +6,8 @@ import postMessage from '../../privateHooks/postMessage';
 import Swal from 'sweetalert2';
 
 const ContactMe = () => {
+
+    const [apiKey,setApiKey]=useState('');
 
     const handleMessage = e => {
         e.preventDefault();
