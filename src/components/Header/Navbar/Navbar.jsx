@@ -10,41 +10,49 @@ const Navbar = () => {
     const links = [
         {
             title: 'Services',
-            to: 'services',
+            to: '#services',
             classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
             id: 1,
         },
         {
             title: 'Works',
-            to: 'works',
+            to: '#works',
             classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
             id: 2,
         },
         {
             title: 'About Me',
-            to: 'about--me',
+            to: '#about-me',
             classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
             id: 3,
         },
+        // {
+        //     title: 'Articles',
+        //     to: '#articles',
+        //     classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
+        //     id: 4,
+        // },
         {
-            title: 'Articles',
-            to: 'articles',
-            classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
-            id: 4,
-        },
-        {
-            title: 'Pages',
-            to: 'pages',
+            title: 'Projects',
+            to: '#projects',
             classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
             id: 5,
         },
         {
             title: 'Contact Me',
-            to: 'contact-me',
+            to: '#contact-me',
             classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
             id: 6,
         },
     ];
+
+    const handleScroll = (e, target) => {
+        e.preventDefault();
+        const section = document.querySelector(target);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     // Close menu on Escape key
     useEffect(() => {
@@ -115,15 +123,15 @@ const Navbar = () => {
                 <div className="hidden lg:flex gap-4 items-center">
                     <ul className="flex items-center gap-8 uppercase">
                         {links.map((link) => (
-                            <NavLink
-                                key={link.id}
-                                to={link.to}
-                                className={({ isActive }) =>
-                                    `${link.classes} ${isActive ? 'text-cyan-400 underline' : ''}`
-                                }
-                            >
-                                <li>{link.title}</li>
-                            </NavLink>
+                            <li key={link.id}>
+                                <a
+                                    href={link.to}
+                                    onClick={(e) => handleScroll(e, link.to)}
+                                    className={link.classes}
+                                >
+                                    {link.title}
+                                </a>
+                            </li>
                         ))}
                     </ul>
                     <button className="rounded-3xl bg-[#FFFFFF] hover:bg-[#AEAEAE] text-[#0A0A0A] w-36 h-12 font-semibold transition-all duration-300">

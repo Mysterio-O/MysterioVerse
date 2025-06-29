@@ -129,7 +129,7 @@ const ContactMe = () => {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-400">PREFER EMAIL COMMUNICATION</p>
-                                <p className="font-semibold text-lg">hello@example.com</p>
+                                <p className="font-semibold text-lg">skrabbi.019@gmail.com</p>
                             </div>
                         </motion.a>
                     </div>
