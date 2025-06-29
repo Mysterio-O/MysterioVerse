@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import profile from '../../assets/profile.jpg'
+import postMessage from '../../privateHooks/postMessage';
+import Swal from 'sweetalert2';
 
 const ContactMe = () => {
 
@@ -12,11 +14,70 @@ const ContactMe = () => {
         const email = form.email.value;
         const subject = form.subject.value;
         const details = form.details.value;
-        console.log(name, email,subject, details);
+        // console.log(name, email, subject, details);
+
+        let messageObject = {};
+
+        if (name && email && subject && details) {
+            messageObject = {
+                sender_Name: name,
+                sender_Email: email,
+                subject,
+                message: details
+            }
+        }
+
+        if (messageObject) {
+            postMessage(messageObject)
+                .then(data => {
+                    if (data?.status === 200 || data?.statusText === 'ok') {
+                        Swal.fire({
+                            title: 'Message Sent.',
+                            text: 'You have successfully sent the message to Mysterio! Please wait, he will contact you soon.',
+                            icon: 'success',
+                            background: '#000',
+                            color: '#fff',
+                            iconColor: '#22c55e',
+                            timer: 4000,
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            customClass: {
+                                popup: 'rounded-xl shadow-lg',
+                                title: 'text-white font-semibold',
+                                htmlContainer: 'text-gray-300 text-sm',
+                            }
+                        });
+                        form.reset();
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                    Swal.fire({
+                        title: 'Something went wrong!',
+                        text: 'Failed to send the message. Try again.',
+                        icon: 'error',
+                        background: '#000',
+                        color: '#fff',
+                        iconColor: '#ef4444',
+                        timer: 3000,
+                        toast: true,
+                        position: 'top',
+                        showConfirmButton: false,
+                        customClass: {
+                            popup: 'rounded-xl shadow-lg',
+                            title: 'text-white font-semibold',
+                            htmlContainer: 'text-gray-300 text-sm',
+                        }
+                    });
+
+                })
+        }
+
     }
 
     return (
-        <section id="contact" className="min-h-screen bg-black text-white py-20 px-6 md:px-20">
+        <section id="contact" className="min-h-screen bg-black text-white py-20 px-6 md:px-20 overflow-x-hidden">
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-14">
                 {/* LEFT SECTION */}
                 <motion.div
@@ -83,24 +144,28 @@ const ContactMe = () => {
                     transition={{ duration: 1 }}
                 >
                     <input
+                        required
                         type="text"
                         name='name'
                         placeholder="Your Name"
                         className="w-full bg-black border border-gray-700 rounded-md p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-600"
                     />
                     <input
+                        required
                         type="email"
                         name='email'
                         placeholder="Your Email"
                         className="w-full bg-black border border-gray-700 rounded-md p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-600"
                     />
                     <input
+                        required
                         type="text"
                         name='subject'
                         placeholder="Subject"
                         className="w-full bg-black border border-gray-700 rounded-md p-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-600"
                     />
                     <textarea
+                        required
                         rows="5"
                         name='details'
                         placeholder="Message in brief..."
