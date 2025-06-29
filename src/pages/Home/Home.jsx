@@ -4,6 +4,7 @@ import TechCarousel from '../../components/TechCarousel/TechCarousel';
 import AboutMe from '../../components/AboutMe/AboutMe';
 import ContactMe from '../../components/ContactMe/ContactMe';
 import MyProjects from '../../components/MyProjects/MyProjects';
+import ToolsSection from '../../components/ToolsSection/ToolsSection';
 
 const Home = () => {
     return (
@@ -22,6 +23,9 @@ const Home = () => {
             </div>
             <div>
                 <ContactMe />
+            </div>
+            <div>
+                <ToolsSection/>
             </div>
         </div>
     );

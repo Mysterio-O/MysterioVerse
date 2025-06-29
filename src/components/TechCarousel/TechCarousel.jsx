@@ -70,7 +70,7 @@ const TechCarousel = () => {
 
     return (
         <section className="h-32 md:mt-10 lg:mt-0">
-            <div className="container mx-auto">
+            <div className="max-w-7xl md:px-12 mx-auto">
                 <div className="overflow-hidden py-4">
                     <motion.div
                         className="flex"
