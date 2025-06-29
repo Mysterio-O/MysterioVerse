@@ -3,6 +3,7 @@ import Banner from '../../components/Banner/Banner';
 import TechCarousel from '../../components/TechCarousel/TechCarousel';
 import AboutMe from '../../components/AboutMe/AboutMe';
 import ContactMe from '../../components/ContactMe/ContactMe';
+import MyProjects from '../../components/MyProjects/MyProjects';
 
 const Home = () => {
     return (
@@ -11,13 +12,16 @@ const Home = () => {
                 <Banner />
             </div>
             <div className=''>
-                <TechCarousel/>
+                <TechCarousel />
             </div>
             <div>
-                <AboutMe/>
+                <AboutMe />
             </div>
             <div>
-                <ContactMe/>
+                <MyProjects />
+            </div>
+            <div>
+                <ContactMe />
             </div>
         </div>
     );
