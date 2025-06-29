@@ -191,15 +191,17 @@ const Navbar = () => {
                                         exit="exit"
                                         custom={index}
                                     >
-                                        <NavLink
-                                            to={link.to}
-                                            className={({ isActive }) =>
-                                                `${link.classes} ${isActive ? 'text-cyan-400 underline' : ''}`
+                                        <a
+                                            href={link.to}
+                                            onClick={(e) => {
+                                                handleScroll(e, link.to);
+                                                setIsMenuOpen(false);
                                             }
-                                            onClick={() => setIsMenuOpen(false)}
+                                            }
+                                            className={link.classes}
                                         >
                                             {link.title}
-                                        </NavLink>
+                                        </a>
                                     </motion.li>
                                 ))}
                             </ul>

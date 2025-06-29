@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 
 const ContactMe = () => {
 
-    const [apiKey,setApiKey]=useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleMessage = e => {
         e.preventDefault();
@@ -30,9 +30,11 @@ const ContactMe = () => {
         }
 
         if (messageObject) {
+            setIsLoading(true);
             postMessage(messageObject)
                 .then(data => {
                     if (data?.status === 200 || data?.statusText === 'ok') {
+                        setIsLoading(false);
                         Swal.fire({
                             title: 'Message Sent.',
                             text: 'You have successfully sent the message to Mysterio! Please wait, he will contact you soon.',
@@ -54,6 +56,7 @@ const ContactMe = () => {
                     }
                 })
                 .catch(err => {
+                    setIsLoading(false);
                     console.log(err);
                     Swal.fire({
                         title: 'Something went wrong!',
@@ -177,7 +180,9 @@ const ContactMe = () => {
                         type="submit"
                         className="bg-white text-black py-2 px-6 rounded-full font-semibold hover:bg-gray-200 transition"
                     >
-                        SEND MESSAGE
+                        {
+                            isLoading ? "SENDING..." : "SEND MESSAGE"
+                        }
                     </button>
                 </motion.form>
             </div>
