@@ -4,11 +4,10 @@ import { motion } from "motion/react";
 
 const links = [
     { title: 'Services', to: '#services', classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300', id: 1 },
-    { title: 'Works', to: '#works', classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300', id: 2 },
+    { title: 'Education', to: '#education', classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300', id: 2 },
     { title: 'About Me', to: '#about-me', classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300', id: 3 },
-    // { title: 'Articles', to: '#articles', classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300', id: 4 },
-    { title: 'Projects', to: '#projects', classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300', id: 5 },
-    { title: 'Contact Me', to: '#contact-me', classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300', id: 6 },
+    { title: 'Projects', to: '#projects', classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300', id: 4 },
+    { title: 'Contact Me', to: '#contact-me', classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300', id: 5 },
 ];
 const Footer = () => {
 

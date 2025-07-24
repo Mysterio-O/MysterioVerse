@@ -77,23 +77,17 @@ const Navbar = () => {
             classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
             id: 3,
         },
-        // {
-        //     title: 'Articles',
-        //     to: '#articles',
-        //     classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
-        //     id: 4,
-        // },
         {
             title: 'Projects',
             to: '#projects',
             classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
-            id: 5,
+            id: 4,
         },
         {
             title: 'Contact Me',
             to: '#contact-me',
             classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
-            id: 6,
+            id: 5,
         },
     ];
 

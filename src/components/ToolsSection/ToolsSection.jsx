@@ -1,13 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaFigma, FaHtml5, FaCss3Alt, FaReact, FaFire, FaCode, FaNodeJs } from 'react-icons/fa';
-import { SiDaisyui, SiMaterialformkdocs, SiPostman, SiFramer, SiFirebase, SiReacttable, SiTailwindcss, SiJavascript, SiExpress, SiMongodb } from 'react-icons/si';
+import { SiDaisyui, SiMaterialformkdocs, SiPostman, SiFramer, SiFirebase, SiReacttable, SiTailwindcss, SiJavascript, SiExpress, SiMongodb, SiNextdotjs, } from 'react-icons/si';
+import { FaDatabase } from 'react-icons/fa';
 
 const toolsData = [
     { name: 'HTML5', icon: FaHtml5, category: 'Development' },
     { name: 'CSS3', icon: FaCss3Alt, category: 'Development' },
     { name: 'JavaScript', icon: SiJavascript, category: 'Development' },
     { name: 'React', icon: FaReact, category: 'Development' },
+    { name: 'Next.js', icon: SiNextdotjs, category: 'Development' },
     { name: 'Tailwind', icon: SiTailwindcss, category: 'Development' },
     { name: 'Framer Motion', icon: SiFramer, category: 'Motion' },
     { name: 'MaterialUI', icon: SiMaterialformkdocs, category: 'Development' },
@@ -17,6 +19,7 @@ const toolsData = [
     { name: "NodeJs", icon: FaNodeJs, category: 'Development' },
     { name: 'ExpressJs', icon: SiExpress, category: 'Development' },
     { name: 'MongoDB', icon: SiMongodb, category: "Development" },
+    { name: 'Mongoose', icon: FaDatabase, category: 'Development' },
     { name: 'Figma', icon: FaFigma, category: 'Tools' },
     { name: 'VS Code', icon: FaCode, category: 'Tools' },
     { name: 'Postman', icon: SiPostman, category: 'Tools' },

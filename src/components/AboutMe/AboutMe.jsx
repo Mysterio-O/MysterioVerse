@@ -71,7 +71,12 @@ const AboutMe = () => {
                             />
                             <div>
                                 <p className="text-sm text-gray-400">GET IN TOUCH</p>
-                                <EmailButton />
+                               <span
+                                     className="text-lg font-semibold flex items-center gap-2 text-white hover:text-[#53EAFD] transition-colors duration-300"
+                                   >
+                                     <FaEnvelope className="text-[#53EAFD]" /> 
+                                     skrabbi.019@gmail.com
+                                   </span>
                             </div>
                         </motion.a>
                     </div>
