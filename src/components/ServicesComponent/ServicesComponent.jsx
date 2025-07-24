@@ -5,7 +5,7 @@ import { MdArrowForward } from 'react-icons/md';
 
 const ServiceCard = ({ icon, title, description, technologies }) => (
     <motion.div
-        className="bg-[rgb(10,10,10)] hover:bg-[#202020] transition-colors duration-300 p-6 rounded-lg text-white flex-1 m-4 relative group"
+        className="bg-[rgb(10,10,10)] hover:bg-[#202020] transition-colors duration-300 p-6 rounded-lg text-white flex-1 m-4 relative group border border-white/20"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

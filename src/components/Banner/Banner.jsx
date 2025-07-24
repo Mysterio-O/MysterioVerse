@@ -109,7 +109,7 @@ const Banner = () => {
                                             }}
                                             transition={{ duration: 0.3 }}
                                         >
-                                            <GiSpiderWeb size={40} className='text-white/60'/>
+                                            <GiSpiderWeb size={40} className='text-white/60' />
                                         </motion.span>
                                     }
                                 </motion.div>
@@ -148,7 +148,9 @@ const Banner = () => {
                     </div>
 
                     <div className='flex flex-col gap-4 items-center'>
-                        <PortfolioBtn />
+                        <a href="https://github.com/Mysterio-O">
+                            <PortfolioBtn />
+                        </a>
                         <a
                             href={resume}
                             download="resume">

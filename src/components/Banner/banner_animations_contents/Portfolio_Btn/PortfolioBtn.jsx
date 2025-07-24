@@ -1,11 +1,15 @@
 import React from 'react';
+import { FaGithub } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const PortfolioBtn = () => {
   return (
     <StyledWrapper>
       <button type="button" className="btn">
-        <strong>View Portfolio</strong>
+        <span className='flex items-center gap-2'>
+          <strong>View Github</strong>
+          <FaGithub size={30}/>
+        </span>
         <div id="container-stars">
           <div id="stars" />
         </div>
