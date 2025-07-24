@@ -3,6 +3,7 @@ import { FaEnvelope } from 'react-icons/fa';
 import { AnimatePresence, motion, useMotionTemplate, useMotionValueEvent, useScroll, useTransform } from 'motion/react';
 import EmailButton from './EmailButton';
 import profile from '../../assets/profile.jpg'
+import AboutMeComponent from '../AboutMeComponent/AboutMeComponent';
 
 const AboutMe = () => {
 
@@ -18,7 +19,7 @@ const AboutMe = () => {
     })
 
     const contentOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
-    const blur = useTransform(scrollYProgress, [0, 0.5], [1,0]);
+    const blur = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
     const filter = useMotionTemplate`blur(${blur}px)`;
 
     return (
@@ -55,14 +56,14 @@ const AboutMe = () => {
                         </div>
 
                         {/* Contact Info */}
-                        <motion.a 
-                        initial={{scale:0.8,opacity:0,y:20}}
-                        whileInView={{scale:1,y:0,opacity:1}}
-                        whileHover={{scale:1.1}}
-                        whileTap={{scale:0.9}}
-                        transition={{duration:0.3,ease:'easeInOut'}}
-                        href="mailto:skrabbi.019@gmail.com"
-                        className="bg-gradient-to-r from-gray-900 to-black p-6 rounded-2xl flex items-center space-x-4 shadow-lg">
+                        <motion.a
+                            initial={{ scale: 0.8, opacity: 0, y: 20 }}
+                            whileInView={{ scale: 1, y: 0, opacity: 1 }}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                            href="mailto:skrabbi.019@gmail.com"
+                            className="bg-gradient-to-r from-gray-900 to-black p-6 rounded-2xl flex items-center space-x-4 shadow-lg">
                             <img
                                 src={profile}
                                 alt="Profile"
@@ -70,7 +71,7 @@ const AboutMe = () => {
                             />
                             <div>
                                 <p className="text-sm text-gray-400">GET IN TOUCH</p>
-                                <EmailButton/>
+                                <EmailButton />
                             </div>
                         </motion.a>
                     </div>
@@ -107,6 +108,9 @@ const AboutMe = () => {
                     </div>
                 </div>
             </motion.section>
+            <div id='education'>
+                <AboutMeComponent />
+            </div>
         </AnimatePresence>
     );
 };

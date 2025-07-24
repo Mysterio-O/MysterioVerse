@@ -6,6 +6,7 @@ import ContactMe from '../../components/ContactMe/ContactMe';
 import MyProjects from '../../components/MyProjects/MyProjects';
 import ToolsSection from '../../components/ToolsSection/ToolsSection';
 import Footer from '../../components/Footer/Footer';
+import ServicesComponent from '../../components/ServicesComponent/ServicesComponent';
 
 const Home = () => {
     return (
@@ -15,6 +16,9 @@ const Home = () => {
             </div>
             <div className=''>
                 <TechCarousel />
+            </div>
+            <div className='pt-10' id='services'>
+                <ServicesComponent />
             </div>
             <div id='about-me'>
                 <AboutMe />
@@ -28,9 +32,9 @@ const Home = () => {
             <div id='contact-me' className='bg-black'>
                 <ContactMe />
             </div>
-<div>
-    <Footer/>
-</div>
+            <div>
+                <Footer />
+            </div>
         </div>
     );
 };
