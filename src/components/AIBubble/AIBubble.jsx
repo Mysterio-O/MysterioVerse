@@ -32,7 +32,7 @@ const AIBubble = () => {
         setIsLoading(true);
 
         try {
-            const res = await axios.post('http://localhost:3000/ask-ai-assistant', {
+            const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}/ask-ai-assistant`, {
                 message: input
             });
             const data = await res.data;
