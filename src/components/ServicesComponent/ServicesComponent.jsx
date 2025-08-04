@@ -65,7 +65,7 @@ const ServicesComponent = () => {
             <div className='max-w-4xl mx-auto'>
                 <div className='flex gap-10'>
                     <span className=" text-[#FFFFFF] text-sm min-w-20">What I Do</span>
-                    <h1 className="text-4xl font-bold mb-8 text-white text-balance text-end">DIGITAL WEB DEVELOPMENT SERVICES I OFFER</h1>
+                    <h1 className="text-2xl md:text-4xl font-bold mb-8 text-white text-balance text-end">DIGITAL WEB DEVELOPMENT SERVICES I OFFER</h1>
                 </div>
                 <div className="flex flex-wrap justify-center">
                     {services.slice(0, 2).map((service, index) => (
