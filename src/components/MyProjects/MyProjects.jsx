@@ -3,6 +3,8 @@ import { motion } from 'motion/react';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import galaxiImg from '../../assets/projectImages/galaximart.png';
 import plantImg from '../../assets/projectImages/Screenshot 2025-06-29 105312.png'
+import lifeDropImage from '../../assets/projectImages/life-drop.png';
+import reactCLI from '../../assets/projectImages/CLI.png';
 
 const projects = [
     {
@@ -23,6 +25,24 @@ const projects = [
         liveLink: 'https://plant-pulse.netlify.app',
         githubLink: 'https://github.com/Mysterio-O/Plant-Pluse'
     },
+    {
+        id: 3,
+        title: "LifeDrop",
+        description: "LifeDrop is a platform where user can either donate blood to others donation requests or request for blood on their own.",
+        image: lifeDropImage,
+        technologies: ['React', 'Tailwind', 'DaisyUI', 'Motion', "React Hook Form", "Axios", "React-Query", 'Firebase', 'Stripe', "React-Loading-skeleton", 'Jodit-React', 'Rechart', 'React-Tooltip' ],
+        liveLink: 'https://life-drop-bd.netlify.app',
+        githubLink: 'https://github.com/Mysterio-O/life-drop-client/tree/main'
+    },
+    {
+        id:4,
+        title: 'React Setup Pro CLI',
+        description: "A full ready react project setup with tailwind configured, firebase authentication functions, axios interceptor setup, multiple custom hooks and theme provider with a theme toggle.",
+        image: reactCLI,
+        technologies: ['JavaScript', 'React', 'React Router','React Icons', "Motion", "Tailwind", "DaisyUI", 'Firebase', "Axios", "React Query", "Chalk", "Ora", "Validate npm package name"],
+        liveLink: 'https://www.npmjs.com/package/react-setup-pro',
+        githubLink: 'https://github.com/Mysterio-O/react-setup-pro'
+    }
 ];
 
 const MyProjects = () => {
