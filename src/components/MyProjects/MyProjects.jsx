@@ -11,7 +11,7 @@ const MyProjects = () => {
     const { data: projects = [], isLoading, isError } = useQuery({
         queryKey: ['allProjects'],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:3000/projects');
+            const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/projects`);
             // console.log(res);
             return res.data;
         }
