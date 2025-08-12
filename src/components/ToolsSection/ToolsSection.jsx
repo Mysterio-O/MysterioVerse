@@ -31,7 +31,7 @@ const ToolsSection = () => {
         <section className="bg-black text-white py-16 px-4 overflow-x-hidden">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-4xl font-bold text-orange-500 mb-8">Tools</h2>
-                <h1 className="text-5xl font-bold mb-12">THE KEY DESIGN AND DEVELOPMENT TOOLS I USE</h1>
+                <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold mb-12">THE KEY DESIGN AND DEVELOPMENT TOOLS I USE</h1>
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
                     {toolsData.map((tool, index) => (
                         <motion.div

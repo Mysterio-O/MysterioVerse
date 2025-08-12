@@ -41,7 +41,7 @@ const AboutMe = () => {
                     <div className="flex flex-col lg:flex-row items-start gap-10">
                         <div className="flex-1">
                             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight uppercase tracking-tight">
-                                A full-stack developer with a <br />
+                                A mern-stack developer with a <br />
                                 knack for building clean UI <br />
                                 and scalable backend systems.
                             </h1>
@@ -52,6 +52,15 @@ const AboutMe = () => {
 
                             <p className="mt-4 text-gray-400">
                                 I thrive on building seamless user experiences, developing smart backend APIs, and deploying real-world features that users love.
+                            </p>
+                            <p className="mt-4 text-gray-400">
+                                I enjoy building projects with React. It's easy to build and but a bit tricky in some points. But overall React + Tailwind + Firebase + Express + MongoDB is really one of the best combination for me.
+                            </p>
+                            <p className="mt-4 text-gray-400">
+                                But I also wish to learn Python in the future to expand my skill set and explore new opportunities in backend development, automation, and a lot of works which are related to AI. And of course the FastAPI to use in web development.
+                            </p>
+                            <p className="mt-4 text-gray-400">
+                                I prefer spending time with family and friends to keep the mind fresh. We developers need to keep mind fresh cause that's what we use most in programming. So I regualry try to spend some time with family and friends to keep the mind fresh. Its like healing myself and closely a hobby to me nowadays.
                             </p>
                         </div>
 

@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "title": "GalaxiMart",
+    "description": "GaalxiMart is an online wholesale web platform where users can browse a wide range of products across various categories.",
+    "image": "https://i.ibb.co.com/qMWZYbJV/galaximart-main.png",
+    "technologies": ["React", "Tailwind", "DaisyUI", "Firebase", "MongoDB", "Motion", "ReactBits", "Swiper", "Three", "Axios", "Gsap"],
+    "liveLink": "https://galaxi-mart.netlify.app",
+    "githubLink": "https://github.com/Mysterio-O/Galaximart-Client",
+    "details": [
+      {
+        "images": ["https://i.ibb.co.com/qMWZYbJV/galaximart-main.png", "https://i.ibb.co.com/d4xb4hvp/galaximart-my-products.png", "https://i.ibb.co.com/8gfnvQpG/galaximart-order-history.png"],
+        "technologies": ["React", "Tailwind", "DaisyUI", "Firebase", "MongoDB", "Motion", "ReactBits", "Swiper", "Three", "Axios", "Gsap"],
+        "description": "Galaximart is a online futuristic wholesale platform. There are various kinds of categories and users can find bunch of products on each categories with a pagination which reduce the initial load on render. There is a section called galaxi parallax. Its build with motion and tailwind and ReactBits. Also users can subscribe with their email and track order status with transactionId.",
+        "liveLink": "https://galaxi-mart.netlify.app",
+        "githubLink": "https://github.com/Mysterio-O/Galaximart-Client",
+        "challenges": "Galaxi Parallax was the most challenging part for me. That was when I was exploring motion for first time. And making that kind of animated section was the first time for me. So that it was a bit challenging for me which I had overcome.",
+        "futureImprovements": "I want to add payment system with stripe here and also add an admin panel to maintain the overall website. And also want to add some core features like top products based on sale count and others"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Plant_Pluse",
+    "description": "Plant Pulse is a full-featured plant management application.",
+    "image": "https://i.ibb.co.com/NR2Jchx/Screenshot-2025-06-29-105312.png",
+    "technologies": ["React", "Tailwind", "DaisyUI", "Motion", "Firebase", "Lottie-React", "Rechart", "Swiper", "ua-parser-js"],
+    "liveLink": "https://plant-pulse.netlify.app",
+    "githubLink": "https://github.com/Mysterio-O/Plant-Pluse",
+    "details": [
+      {
+        "images": ["https://i.ibb.co.com/NR2Jchx/Screenshot-2025-06-29-105312.png", "https://i.ibb.co.com/xKT8hdYt/plant-pulse-all-plants.png", "https://i.ibb.co.com/nqyGgvFP/plant-pulse-seasonal.png", "https://i.ibb.co.com/fV2rnp8R/plant-pulse-support.png"],
+        "technologies": ["React", "Tailwind", "DaisyUI", "Motion", "Firebase", "Lottie-React", "Rechart", "Swiper", "ua-parser-js"],
+        "description": "that allows users to explore, add, and manage plants. Built from scratch with modern tools and technologies, this project is both user-friendly and visually engaging. User can add their plants from dashboard and then view details like when is the next watering date and etc. There is a section which gives suggestions on seasonal plants.",
+        "liveLink": "https://plant-pulse.netlify.app",
+        "githubLink": "https://github.com/Mysterio-O/Plant-Pluse",
+        "challenges": "Plant Pulse was the first project where I build an admin panel and a dashboard with many functionalities. The most challenging part was to implement the switch account functionality. First I thought I should store device and browser info with email, later I just stored the email and from those stored email I created the switch account functionality.",
+        "futureImprovements": "I want to add AI to observer plant health with next and previous watering date and also want to add some other features to make it more helpful for those people who love plants."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "LifeDrop",
+    "description": "LifeDrop is a platform where user can either donate blood to others donation requests or request for blood on their own.",
+    "image": "https://i.ibb.co.com/5hKSSX9R/life-drop.png",
+    "technologies": ["React", "Tailwind", "DaisyUI", "Motion", "React Hook Form", "Axios", "React-Query", "Firebase", "Stripe", "React-Loading-skeleton", "Jodit-React", "Rechart", "React-Tooltip"],
+    "liveLink": "https://life-drop-bd.netlify.app",
+    "githubLink": "https://github.com/Mysterio-O/life-drop-client/tree/main",
+    "details": [
+      {
+        "images": ["https://i.ibb.co.com/5hKSSX9R/life-drop.png", "https://i.ibb.co.com/tp3GHSs2/lifedrop-admin.png", "https://i.ibb.co.com/W4dFj68N/lifedrop-all-users.png", "https://i.ibb.co.com/5xfsT8Mh/lifedrop-content-management.png"],
+        "technologies": ["React", "Tailwind", "DaisyUI", "Motion", "React Hook Form", "Axios", "React-Query", "Firebase", "Stripe", "React-Loading-skeleton", "Jodit-React", "Rechart", "React-Tooltip"],
+        "description": "LifeDrop made finding blood easier. Just sign up a new account and you are ready to donate others or request for blood donation. The whole application runs by admin and volunteers. There is a blog section where users can find multiple blogs written by admins and also can like, comment and share in those blogs. There is some other sections like funding or give funding, where people can give donations to improve the overall charity. Users can search donor based on location and blood group from the search donor button in the banner. There are more functionalities and I have plan to improve this whole project more and use in mankind. There is another fun to switch between accounts like facebook, you will find it in the right section in the dashboard.",
+        "challenges": "LifeDrop is a web application which I build with the less challenges. Its a website with many real time features. And managing these all features based on multiple role on the client and server side both was a bit tricky then.",
+        "futureImprovements": "I want to add more features which will make this platform more efficient like donor live location, push notification after every donation request to all of those who has the same blood group from that area."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "React Setup Pro CLI",
+    "description": "A full ready react project.",
+    "image": "https://i.ibb.co.com/7xJn0wNn/CLI.png",
+    "technologies": ["JavaScript", "React", "React Router", "React Icons", "Motion", "Tailwind", "DaisyUI", "Firebase", "Axios", "React Query", "Chalk", "Ora", "Validate npm package name"],
+    "liveLink": "https://www.npmjs.com/package/react-setup-pro",
+    "githubLink": "https://github.com/Mysterio-O/react-setup-pro",
+    "details": [
+      {
+        "images": ["https://i.ibb.co.com/7xJn0wNn/CLI.png", "https://i.ibb.co.com/VWHkX69d/react-features-1.png", "https://i.ibb.co.com/zW8MVKWY/react-setup-pro-feature-2.png"],
+        "technologies": ["JavaScript", "React", "React Router", "React Icons", "Motion", "Tailwind", "DaisyUI", "Firebase", "Axios", "React Query", "Chalk", "Ora", "Validate npm package name"],
+        "description": "I built this tool for my usage. Setting up a new react project with multiple dependencies is a time cutting process. So I built his CLI tool to reduce those time cutting task into command line. This tool creates new project with react with set up tailwind configure, motion installed, axios interceptors, multiple custom hook, firebase authentication functions with context, theme provide and more. I build it for personal use, but some people are using it as i can see from the weekly downloads. I hope I will bring some improvements in future.",
+        "liveLink": "https://www.npmjs.com/package/react-setup-pro",
+        "githubLink": "https://github.com/Mysterio-O/react-setup-pro",
+        "challenges": "I built this tool for my usage. Setting up a new react project with multiple dependencies is a time cutting process. So I built his CLI tool to reduce those time cutting task into command line. Building it was a first time for me, so it threw multiple errors. I took help from AI on those errors and the tool is running fine now.",
+        "futureImprovements": "I want to add more reusable components in future. Like: dashboard layout, responsive navbar layout, login, registration, primary button, secondary button and multiple animations."
+      }
+    ]
+  }
+]

@@ -4,10 +4,12 @@ import { Outlet } from 'react-router';
 import ClickSpark from '../ClickSpark/ClickSpark';
 import { motion } from "motion/react";
 import AIBubble from '../components/AIBubble/AIBubble';
+import Scroll from '../Scroll/Scroll';
 
 const RootLayout = () => {
     return (
         <div className='min-h-screen relative font-mona-sans bg-[#111111]'>
+            <Scroll/>
             <ClickSpark>
                 <motion.section
                     initial={{ y: -40 }}

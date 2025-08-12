@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { RiMenuFold2Line, RiMenuFoldLine, RiCloseLine } from 'react-icons/ri';
-import { NavLink } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 import { AnimatePresence, motion } from 'motion/react';
-import emailjs from "emailjs-com";
+import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const menuRef = useRef(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const [form, setForm] = useState({ email: "", message: "" });
+    const menuRef = useRef(null);
+    const [form, setForm] = useState({ email: '', message: '' });
     const [isSending, setIsSending] = useState(false);
-
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -41,7 +41,7 @@ const Navbar = () => {
                     background: '#111111',
                     color: '#FFFFFF',
                 });
-                setForm({ email: "", message: "" });
+                setForm({ email: '', message: '' });
                 closeModal();
             })
             .catch((err) => {
@@ -61,43 +61,59 @@ const Navbar = () => {
     const links = [
         {
             title: 'Services',
-            to: '#services',
-            classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
+            to: '/#services',
             id: 1,
         },
         {
             title: 'Education',
-            to: '#education',
-            classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
+            to: '/#education',
             id: 2,
         },
         {
             title: 'About Me',
-            to: '#about-me',
-            classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
+            to: '/#about-me',
             id: 3,
         },
         {
             title: 'Projects',
-            to: '#projects',
-            classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
+            to: '/#projects',
             id: 4,
         },
         {
             title: 'Contact Me',
-            to: '#contact-me',
-            classes: 'text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300',
+            to: '/#contact-me',
             id: 5,
         },
     ];
 
-    const handleScroll = (e, target) => {
+    const handleNavigation = (e, to, sectionId) => {
         e.preventDefault();
-        const section = document.querySelector(target);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
+        const isHomePage = location.pathname === '/';
+
+        if (isHomePage) {
+            // If already on homepage, scroll to the section
+            const section = document.querySelector(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            // Navigate to homepage with hash and scroll after navigation
+            navigate(to);
         }
     };
+
+    // Handle scrolling after navigation
+    useEffect(() => {
+        const hash = location.hash;
+        if (hash) {
+            setTimeout(() => {
+                const section = document.querySelector(hash);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100); // Delay to ensure DOM is updated after navigation
+        }
+    }, [location]);
 
     // Close menu on Escape key
     useEffect(() => {
@@ -159,13 +175,13 @@ const Navbar = () => {
 
     const closeModal = () => {
         setIsModalOpen(false);
-    }
+    };
 
     const modalVariants = {
         initial: { opacity: 0, y: -150 },
         animate: { opacity: 1, y: 0 },
         exit: { opacity: 0, y: -150 },
-        transition: { duration: 0.3, ease: 'easeInOut' }
+        transition: { duration: 0.3, ease: 'easeInOut' },
     };
 
     return (
@@ -180,17 +196,21 @@ const Navbar = () => {
                     <ul className="flex items-center gap-8 uppercase">
                         {links.map((link) => (
                             <li key={link.id}>
-                                <a
-                                    href={link.to}
-                                    onClick={(e) => handleScroll(e, link.to)}
-                                    className={link.classes}
+                                <NavLink
+                                    to={link.to}
+                                    onClick={(e) => handleNavigation(e, link.to, link.to.split('/')[1] || '#')}
+                                    className="text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300"
+                                    activeClassName="text-cyan-400"
                                 >
                                     {link.title}
-                                </a>
+                                </NavLink>
                             </li>
                         ))}
                     </ul>
-                    <button onClick={() => setIsModalOpen(true)} className="rounded-3xl bg-[#FFFFFF] hover:bg-[#AEAEAE] text-[#0A0A0A] w-36 h-12 font-semibold transition-all duration-300">
+                    <button
+                        onClick={() => setIsModalOpen(true)}
+                        className="rounded-3xl bg-[#FFFFFF] hover:bg-[#AEAEAE] text-[#0A0A0A] w-36 h-12 font-semibold transition-all duration-300"
+                    >
                         Book A Call
                     </button>
                 </div>
@@ -247,17 +267,17 @@ const Navbar = () => {
                                         exit="exit"
                                         custom={index}
                                     >
-                                        <a
-                                            href={link.to}
+                                        <NavLink
+                                            to={link.to}
                                             onClick={(e) => {
-                                                handleScroll(e, link.to);
+                                                handleNavigation(e, link.to, link.to.split('/')[1] || '#');
                                                 setIsMenuOpen(false);
-                                            }
-                                            }
-                                            className={link.classes}
+                                            }}
+                                            className="text-[#FFFFFF] font-semibold text-xl hover:text-cyan-400 transition-all duration-300"
+                                            activeClassName="text-cyan-400"
                                         >
                                             {link.title}
-                                        </a>
+                                        </NavLink>
                                     </motion.li>
                                 ))}
                             </ul>
@@ -270,7 +290,8 @@ const Navbar = () => {
                             >
                                 <button
                                     onClick={() => setIsModalOpen(true)}
-                                    className="rounded-3xl bg-[#FFFFFF] hover:bg-[#AEAEAE] text-[#0A0A0A] w-36 h-12 font-semibold transition-all duration-300">
+                                    className="rounded-3xl bg-[#FFFFFF] hover:bg-[#AEAEAE] text-[#0A0A0A] w-36 h-12 font-semibold transition-all duration-300"
+                                >
                                     Book A Call
                                 </button>
                             </motion.div>
@@ -284,7 +305,8 @@ const Navbar = () => {
                         animate="animate"
                         exit="exit"
                         transition="transition"
-                        className="fixed inset-0 flex items-center justify-center z-50">
+                        className="fixed inset-0 flex items-center justify-center z-50"
+                    >
                         <motion.div
                             className="relative w-full max-w-lg mx-auto bg-[rgba(10,10,10,0.1)] backdrop-blur-md p-6 rounded-lg shadow-lg"
                             initial={{ scale: 0.8 }}
@@ -292,7 +314,6 @@ const Navbar = () => {
                             exit={{ scale: 0.8 }}
                         >
                             <h2 className="text-white text-3xl mb-4">Submit Your Details</h2>
-
                             <button
                                 onClick={closeModal}
                                 className="absolute top-2 right-2 text-white bg-red-500 rounded-full p-2"
@@ -300,7 +321,6 @@ const Navbar = () => {
                             >
                                 <RiCloseLine size={20} />
                             </button>
-
                             <form onSubmit={sendEmail} className="space-y-4">
                                 <input
                                     type="email"
@@ -325,13 +345,12 @@ const Navbar = () => {
                                     disabled={isSending}
                                     className="bg-[#111111] text-white px-6 py-2 rounded-xl cursor-pointer hover:bg-[#FFFFFF] hover:text-[rgb(10,10,10)] transition-colors duration-300"
                                 >
-                                    {isSending ? "Booking..." : "Book A Call"}
+                                    {isSending ? 'Booking...' : 'Book A Call'}
                                 </button>
                             </form>
                         </motion.div>
                     </motion.div>
                 )}
-
             </AnimatePresence>
         </nav>
     );

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router"
 import Home from "../pages/Home/Home"
 import RootLayout from "../Layouts/RootLayout"
+import ProjectDetails from "../pages/ProjectDetails/ProjectDetails"
 
 export const router = createBrowserRouter([
     {
@@ -10,6 +11,10 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 Component: Home
+            },
+            {
+                path:'/project-details/:id',
+                Component: ProjectDetails
             }
         ]
     }
