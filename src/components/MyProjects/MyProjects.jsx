@@ -77,7 +77,7 @@ const MyProjects = () => {
                             <p className="text-gray-400 mt-4">We encountered an issue while fetching the projects. Please try again later.</p>
                         </motion.div>
                     ) : (
-                        <div className="space-y-14">
+                        <div className="flex flex-col-reverse gap-14">
                             {projects.map(project => (
                                 <motion.div
                                     key={project._id}
