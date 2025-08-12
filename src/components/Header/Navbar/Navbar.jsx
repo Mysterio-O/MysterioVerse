@@ -187,7 +187,10 @@ const Navbar = () => {
     return (
         <nav className="bg-[#0A0A0A] md:px-12 md:py-5 z-50" role="navigation" aria-label="Main navigation">
             <div className="flex justify-between items-center max-w-7xl mx-auto px-4">
-                <div>
+                <div 
+                onClick={()=> navigate('/')}
+                className='cursor-pointer'
+                >
                     <img src="/logo.webp" alt="MysterioVerse Logo" className="p-2 h-20" />
                 </div>
 
