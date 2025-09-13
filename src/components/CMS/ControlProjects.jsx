@@ -16,7 +16,7 @@ const ControlProjects = () => {
     const [images, setImages] = useState([]);
     const [uploading, setUploading] = useState(false);
 
-    const imgbbApiKey = "YOUR_IMGBB_API_KEY"; // replace with your API key
+    const imgbbApiKey = import.meta.env.VITE_IMGBB_API_KEY;
 
     // Handle input changes
     const handleChange = (e) => {
@@ -69,13 +69,15 @@ const ControlProjects = () => {
             githubLink: formData.githubLink,
             challenges: formData.challenges,
             futureImprovements: formData.futureImprovements,
-            technologies: formData.technologies.split(",").map((t) => t.trim()), // convert to array
+            technologies: formData.technologies.split(",").map((t) => t.trim()), 
             images: uploadedUrls,
-            image: uploadedUrls[0] || "", // first image as main thumbnail
+            image: uploadedUrls[0] || "", 
         };
 
+        console.log(newProject);
+
         try {
-            await axios.post("http://localhost:5000/projects", newProject); // replace with your backend URL
+            await axios.post(`${import.meta.env.VITE_SERVER_URL}/projects`, newProject); 
             Swal.fire("Success", "Project added successfully!", "success");
             setFormData({
                 title: "",
