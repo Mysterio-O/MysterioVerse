@@ -53,7 +53,7 @@ const MyProjects = () => {
                 >
                     My Projects {
                         isAdmin && <motion.span
-                        onClick={()=> navigate('/control-projects')}
+                            onClick={() => navigate('/control-projects')}
                             initial={{ scale: 1, rotate: 0 }}
                             whileHover={{ scale: 1.25, rotate: 180 }}
                             whileTap={{ scale: 0.55 }}
@@ -121,7 +121,10 @@ const MyProjects = () => {
                                         transition={{ duration: 0.3 }}
                                     >
                                         {/* Image Part */}
-                                        <img
+                                        <motion.img
+                                            initial={{ scale: 0.9, opacity: 0 }}
+                                            whileInView={{ scale: 1, opacity: 1 }}
+                                            transition={{ duration: 0.3, ease: "easeInOut" }}
                                             src={project.image}
                                             alt={project.title}
                                             className="w-full lg:w-1/2 rounded-xl object-cover"
@@ -129,39 +132,62 @@ const MyProjects = () => {
 
                                         {/* Details Part */}
                                         <div className="flex-1 space-y-4 text-center lg:text-left">
-                                            <h3 className="text-2xl md:text-3xl font-semibold text-white">{project.title}</h3>
-                                            <p className="text-gray-400">{project.description}</p>
+                                            <motion.h3
+                                                initial={{ opacity: 0, x: -20 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.5, ease: "easeInOut" }}
+                                                className="text-2xl md:text-3xl font-semibold text-white">{project.title}</motion.h3>
+                                            <motion.p
+                                                initial={{ opacity: 0, x: -20 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.5, ease: "easeInOut" }}
+                                                className="text-gray-400">{project.description}</motion.p>
 
                                             <div className="flex flex-wrap justify-center lg:justify-start gap-2">
                                                 {project.technologies.map((tech, idx) => (
-                                                    <span
+                                                    <motion.span
+                                                        initial={{ scale: 0.9, y: -25, opacity: 0 }}
+                                                        whileInView={{ scale: 1, y: 0, opacity: 1 }}
+                                                        transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.1 * idx }}
                                                         key={idx}
                                                         className="px-3 py-1 text-sm bg-gray-800 rounded-full text-gray-300 hover:outline-1 hover:outline-cyan-300 transition-all duration-300"
                                                     >
                                                         {tech}
-                                                    </span>
+                                                    </motion.span>
                                                 ))}
                                             </div>
 
                                             <div className="flex justify-center lg:justify-start gap-4 mt-4">
-                                                <a
+                                                <motion.a
+                                                    initial={{ scale: 0.75, opacity: 0, y: -10 }}
+                                                    whileInView={{ scale: 1, opacity: 1, y: 0 }}
+                                                    transition={{ duration: 0.3, ease: "easeInOut", delay: 0.2 }}
                                                     href={project.liveLink}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="flex items-center gap-2 text-green-500 hover:underline transition-all duration-300"
                                                 >
                                                     <FaExternalLinkAlt /> Live
-                                                </a>
-                                                <a
+                                                </motion.a>
+                                                <motion.a
+                                                    initial={{ scale: 0.75, opacity: 0, y: -10 }}
+                                                    whileInView={{ scale: 1, opacity: 1, y: 0 }}
+                                                    transition={{ duration: 0.3, ease: "easeInOut", delay: 0.4 }}
                                                     href={project.githubLink}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="flex items-center gap-2 text-gray-400 hover:text-white transition-all duration-300"
                                                 >
                                                     <FaGithub /> Code
-                                                </a>
-                                                <Link to={`/project-details/${project?._id}`} className="flex items-center gap-2 text-[#53EAFD]/70 hover:text-[#53EAFD] transition-all duration-300">
-                                                    <MdOutlinePageview /> View Details
+                                                </motion.a>
+                                                <Link to={`/project-details/${project?._id}`} className="text-[#53EAFD]/70 hover:text-[#53EAFD] transition-all duration-300">
+                                                    <motion.span
+                                                        initial={{ scale: 0.75, opacity: 0, y: -10 }}
+                                                        whileInView={{ scale: 1, opacity: 1, y: 0 }}
+                                                        transition={{ duration: 0.3, ease: "easeInOut", delay: 0.6 }}
+                                                        className='flex items-center gap-2'>
+                                                        <MdOutlinePageview /> View Details
+                                                    </motion.span>
                                                 </Link>
                                             </div>
                                         </div>

@@ -22,6 +22,11 @@ const AboutMe = () => {
     const blur = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
     const filter = useMotionTemplate`blur(${blur}px)`;
 
+    const techVariant = {
+        initial: { scale: 0.7, opacity: 0 },
+        view: { scale: 1, opacity: 1 }
+    }
+
     return (
         <AnimatePresence>
             <motion.section
@@ -80,45 +85,65 @@ const AboutMe = () => {
                             />
                             <div>
                                 <p className="text-sm text-gray-400">GET IN TOUCH</p>
-                               <span
-                                     className="text-lg font-semibold flex items-center gap-2 text-white hover:text-[#53EAFD] transition-colors duration-300"
-                                   >
-                                     <FaEnvelope className="text-[#53EAFD]" /> 
-                                     skrabbi.019@gmail.com
-                                   </span>
+                                <span
+                                    className="text-lg font-semibold flex items-center gap-2 text-white hover:text-[#53EAFD] transition-colors duration-300"
+                                >
+                                    <FaEnvelope className="text-[#53EAFD]" />
+                                    skrabbi.019@gmail.com
+                                </span>
                             </div>
                         </motion.a>
                     </div>
 
                     {/* Tech Stack Subsections */}
                     <div className="mt-14 grid md:grid-cols-2 gap-10">
-                        <div>
+                        <motion.div
+                            variants={techVariant}
+                            initial="initial"
+                            whileInView="view"
+                            transition={{duration:0.3,ease:"easeInOut"}}
+                        >
                             <h3 className="text-xl font-bold mb-2">💻 Frontend Development</h3>
                             <p className="text-gray-400">
                                 Proficient in React, Tailwind CSS, DaisyUI, React Router, and responsive design. Experienced in building animated UIs and form-driven features.
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <div>
+                        <motion.div
+                            variants={techVariant}
+                            initial="initial"
+                            whileInView="view"
+                            transition={{duration:0.3,ease:"easeInOut", delay:0.3}}
+                        >
                             <h3 className="text-xl font-bold mb-2">⚙️ Backend & Database</h3>
                             <p className="text-gray-400">
                                 Skilled in Node.js, Express.js, MongoDB. Built and deployed RESTful APIs with authentication, order management, and database integration.
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <div>
+                        <motion.div
+                            variants={techVariant}
+                            initial="initial"
+                            whileInView="view"
+                            transition={{duration:0.3,ease:"easeInOut", delay:0.6}}
+                        >
                             <h3 className="text-xl font-bold mb-2">🔥 Firebase Integration</h3>
                             <p className="text-gray-400">
                                 Integrated Firebase Auth, Firestore, and hosting in multiple projects for secure and scalable app delivery.
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <div>
+                        <motion.div
+                            variants={techVariant}
+                            initial="initial"
+                            whileInView="view"
+                            transition={{duration:0.3,ease:"easeInOut", delay:0.9}}
+                        >
                             <h3 className="text-xl font-bold mb-2">🌍 Career Vision</h3>
                             <p className="text-gray-400">
                                 Actively seeking freelance and remote roles to contribute to real-world projects and grow professionally. Planning to master Python and advanced stacks next.
                             </p>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </motion.section>
