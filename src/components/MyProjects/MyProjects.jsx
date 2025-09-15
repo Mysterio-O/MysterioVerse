@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { IoMdAdd } from "react-icons/io";
 import { MdOutlinePageview } from "react-icons/md";
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import { AuthContext } from '../../Context/AuthContext';
+
 
 const MyProjects = () => {
+
+    const { user } = useContext(AuthContext);
+    const [isAdmin, setIsAdmin] = useState(false);
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
+        if (!user) {
+            return setIsAdmin(false);
+        }
+
+        if (user?.email === adminEmail) {
+            setIsAdmin(true);
+        }
+        else {
+            setIsAdmin(false)
+        }
+
+    }, [user]);
+    console.log(user);
 
     const { data: projects = [], isLoading, isError } = useQuery({
         queryKey: ['allProjects'],
@@ -23,12 +46,22 @@ const MyProjects = () => {
         <section id="projects" className="bg-black text-white py-20 px-6 md:px-20 relative">
             <div className="max-w-7xl mx-auto">
                 <motion.h2
-                    className="text-4xl md:text-5xl font-bold mb-12 text-center"
+                    className={`text-4xl md:text-5xl font-bold mb-12 ${isAdmin ? 'flex items-center gap-4 justify-center' : 'text-center'}`}
                     initial={{ opacity: 0, y: -50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    My Projects
+                    My Projects {
+                        isAdmin && <motion.span
+                        onClick={()=> navigate('/control-projects')}
+                            initial={{ scale: 1, rotate: 0 }}
+                            whileHover={{ scale: 1.25, rotate: 180 }}
+                            whileTap={{ scale: 0.55 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                            className='text-indigo-700 font-bold cursor-pointer'>
+                            <IoMdAdd size={40} />
+                        </motion.span>
+                    }
                 </motion.h2>
 
                 {
@@ -84,7 +117,7 @@ const MyProjects = () => {
                                         key={project._id}
                                         className={`flex flex-col lg:flex-row gap-8 items-center bg-[#111] p-6 rounded-2xl shadow-xl hover:shadow-2xl transition sticky top-30 -mb-20 z-[${idx * 10 + 10}]`}
                                         initial={{ opacity: 0 }}
-                                        whileInView={{ opacity: 1}}
+                                        whileInView={{ opacity: 1 }}
                                         transition={{ duration: 0.3 }}
                                     >
                                         {/* Image Part */}

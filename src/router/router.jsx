@@ -6,6 +6,7 @@ import ControlProjects from "../components/CMS/ControlProjects"
 import Login from "../pages/Authentication/Login"
 import Forbidden from "../pages/Forbidden/Forbidden"
 import PrivateRoute from "../routes/PrivateRoute"
+import Logout from "../components/Logout/Logout"
 
 export const router = createBrowserRouter([
     {
@@ -33,6 +34,12 @@ export const router = createBrowserRouter([
             {
                 path: '/forbidden',
                 Component: Forbidden
+            },
+            {
+                path: '/logout',
+                element: <PrivateRoute>
+                    <Logout />
+                </PrivateRoute>
             }
         ]
     }
