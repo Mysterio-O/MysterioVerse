@@ -6,7 +6,7 @@ import BlurText from './banner_animations_contents/BlurText/BlurText';
 import { GiSpiderWeb } from 'react-icons/gi';
 import RotatingText from './banner_animations_contents/RotatingText/RotatingText';
 import PortfolioBtn from './banner_animations_contents/Portfolio_Btn/PortfolioBtn';
-import resume from '../../assets/pdfs/resume.pdf'
+import resume from '../../assets/pdfs/SK_MARUF_HOSSAIN_Software_Developer_React.pdf';
 import TechCarousel from '../TechCarousel/TechCarousel';
 import profile from '../../assets/profile.jpg'
 
@@ -153,7 +153,7 @@ const Banner = () => {
                         </a>
                         <a
                             href={resume}
-                            download="resume">
+                            download="SK_Maruf_Hossain_Resume">
 
                             <button className="cursor-pointer flex justify-between items-center bg-gray-800 px-3 py-2 rounded-full text-white tracking-wider shadow-xl hover:bg-gray-900 hover:scale-105 duration-500 hover:ring-1 font-mono w-[150px]">
                                 <span>
