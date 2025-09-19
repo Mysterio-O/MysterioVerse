@@ -155,7 +155,7 @@ const Banner = () => {
                             href={resume}
                             download="SK_Maruf_Hossain_Resume">
 
-                            <button className="cursor-pointer flex justify-between items-center bg-gray-800 px-3 py-2 rounded-full text-white tracking-wider shadow-xl hover:bg-gray-900 hover:scale-105 duration-500 hover:ring-1 font-mono w-[150px]">
+                            <button className="cursor-pointer will-change-transform flex justify-between items-center bg-gray-800 px-3 py-2 rounded-full text-white tracking-wider shadow-xl hover:bg-gray-900 hover:scale-105 duration-500 hover:ring-1 font-mono w-[150px]">
                                 <span>
                                     Download Resume
                                 </span>

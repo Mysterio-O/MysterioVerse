@@ -23,7 +23,7 @@ const RootLayout = () => {
                 <Outlet />
 
 
-                <motion.section>
+                <motion.section title='Ask Friday'>
                     <AIBubble />
                 </motion.section>
 

@@ -64,7 +64,7 @@ const AIBubble = () => {
                 clearInterval(interval);
             }
 
-        }, 30);
+        }, 10);
 
     }
 
